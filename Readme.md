@@ -41,16 +41,10 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
     $ npm install npm -g
 
-###
-### Yarn installation
-  After installing node, this project will need yarn too, so just run the following command.
-
-      $ npm install -g yarn
-
----
 
 ## Install
 
+  $ npm install
 
 ## Testing the project
 
@@ -60,6 +54,14 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
     $ npm start
 
-## Simple build for production
+## Docker Build
 
-    $ yarn build
+    $ docker build -t .
+
+## Docker Tag , Below params needs to be changed according to their requirements
+
+    $ docker tag ${PRO_NAME}:${VER} ${DOCKER_REG}/${PRO_NAME}:${VER}
+
+## Docker Push , Below params needs to be changed according to their requirements
+
+    $ docker push ${DOCKER_REG}/${PRO_NAME}:${VER}

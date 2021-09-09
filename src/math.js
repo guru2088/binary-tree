@@ -174,12 +174,8 @@ var infixToBinaryTree = function(input) {
 
 	for (var s = 0; s < input.length; ) {
 		var token;
-    var negativetoken;
-
-    // console.log("input[s]  - ", input[s] )
 		if (isNaN(input[s])) {
 			token = input[s];
-      // console.log("token 1", token)
 			s+=1;
 		} else {
 			var i = s + 1;
@@ -187,13 +183,15 @@ var infixToBinaryTree = function(input) {
 				i+=1;
 			}
 
+
+      // This is the error occuring place of two operators come at same time with out ( or ). Below code for handling that exception but it needs to be fine tuned
+
       // if(input.substring(s - 1,i - 1) === "-"){
       //   negativetoken = input.substring(s - 1,i - 1) + input.substring(s,i);
       // }
       // else{
       //   token = input.substring(s,i);
       // }
-
 
       token = input.substring(s,i);
 
@@ -208,13 +206,13 @@ var infixToBinaryTree = function(input) {
 				outputStack.push(subtree);
 			}
 			operatorStack.pop();
-		} else if (isNaN(token)) { // token length can be taken out
+		} else if (isNaN(token)) {
 			var operator = createOperator(token);
-      // console.log(" Token "  , token)
-      // console.log("negativetoken ", negativetoken)
+
+      // Here also in operatorStack.pop() we need to fix the issue if two operators come at same time
+
       if (!operatorStack.isEmpty() && operator?.lessOrEqualInPrecedenceTo(operatorStack.peek())) {
         var subtree = createSubtree(operatorStack.pop(), null);
-
         outputStack.push(subtree);
       }
       operatorStack.push(operator);
