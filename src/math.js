@@ -26,8 +26,6 @@ app.get('/calculate',function(req,res){
           message: 'Calculation UnSuccessfull',
       });
     }
-
-
   }
 })
 
@@ -79,13 +77,12 @@ Operator.prototype = {
 }
 
 var createOperator = function(t) {
-  // console.log("operator ----- " , t)
 	switch (t) {
 		case '+': return new Plus(t);
 		case '-': return new Minus(t);
 		case '/': return new Divide(t);
 		case '*': return new Multiply(t);
-		default: return null;
+		default: return "null";
 	}
 }
 
@@ -250,7 +247,15 @@ var evaluate = function(node) {
 	}
 }
 
-//
-// console.log(evaluate(infixToBinaryTree("((15/(7-(1+1)))*3)-(2+(1+1))")))
-//
-// console.log(((15 / (7 - (1 + 1) ) ) * 3 ) - (2 + (1 + 1)))
+//Sample function for Test case
+exports.addition = function(a,b) {
+  if(a > 0 && b > 0){
+    return a + b;
+  }
+  else{
+    return 0;
+  }
+};
+
+
+exports.createOperator = createOperator;
