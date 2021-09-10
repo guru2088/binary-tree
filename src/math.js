@@ -10,7 +10,7 @@ app.listen(port, () => console.log(`Listening at http://localhost:${port}`))
 
 app.get('/calculate',function(req,res){
   if(req.body && req.body.value){
-    var result =  evaluate(infixToBinaryTree(req.body.value))
+    var result =  evaluate(infixToBinaryTree(req.body.value.replace(/ /g,'')))
     if(result){
       res.send({
           status: true,
