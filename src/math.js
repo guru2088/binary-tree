@@ -184,7 +184,8 @@ var infixToBinaryTree = function(input) {
 			}
 
 
-      // This is the error occuring place of two operators come at same time with out ( or ). Below code for handling that exception but it needs to be fine tuned
+      // This is the error occuring place of two operators come at same time with out ( or ).
+      // Below code for handling that exception but it needs to be fine tuned
 
       // if(input.substring(s - 1,i - 1) === "-"){
       //   negativetoken = input.substring(s - 1,i - 1) + input.substring(s,i);
