@@ -1,25 +1,23 @@
 {
-  "name": "question-3",
-  "version": "1.0.0",
-  "description": "",
-  "main": "math.js",
-  "scripts": {
-    "dev": "nodemon src/math.js",
-    "start": "node src/math.js",
-    "coverage": "jscov src .cov && JSCOV=.cov mocha --reporter mocha-term-cov-reporter test/*.js",
-    "test": "mocha test/*.js"
-  },
-  "author": "Guruajan Ganesan",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.15.4",
-    "@babel/core": "^7.15.5",
-    "coverage-node": "^5.0.1"
-  },
+  "name": "binary-tree",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Binary Tree Project",
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "main": "app.js",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
     "jscov": "^0.6.16",
-    "should": "^13.2.3"
+    "restify": "^4.0.2",
+    "swagger-restify-mw": "^0.7.0"
+  },
+  "devDependencies": {
+    "should": "^7.1.0",
+    "supertest": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "swagger project test"
   }
 }

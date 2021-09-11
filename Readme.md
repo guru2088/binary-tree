@@ -54,6 +54,12 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
     $ npm start
 
+
+## Running the project in swagger
+
+    $ Install Swagger --> https://swagger.io/docs/open-source-tools/swagger-ui/usage/installation/
+    $ swagger project start
+
 ## Docker Build
 
     $ docker build -t .

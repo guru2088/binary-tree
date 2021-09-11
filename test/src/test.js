@@ -1,6 +1,6 @@
 var jscov = require('jscov');
 var should = require('should');
-var source = require(jscov.cover('..', 'src', 'math'));
+var source = require(jscov.cover('../../', 'api/controllers', 'calculate'));
 
 //Function : Addition , purpose : Testing
 
